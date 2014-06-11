@@ -1,4 +1,8 @@
+
+#uses pyhtml to generate the code for the webpage
 from pyhtml import *
+
+#this is the main funciton, it generates the entir template
 def generate_page(head,h,main,projects_sidebar):
 	page = html(
 			head,
@@ -13,7 +17,7 @@ def generate_page(head,h,main,projects_sidebar):
 
 	return(page)
 
-
+#this generates the elements inside the head element
 def make_head(pg_title,favico_url = '',stylesheet = 'main.css'):
 	h = head(
 		title(pg_title),
@@ -25,10 +29,11 @@ def make_head(pg_title,favico_url = '',stylesheet = 'main.css'):
 	)
 	return(h)
 
+#this generates the sidebar with all projects
 def make_projects_side_bar(project_list):
 	projects = []
 	for project in project_list:
-		projects.append(li(a(project)))
+		projects.append(li(a(href = project[0])(project[1])))
 
 	project_ul = ul(
 		projects
@@ -40,25 +45,18 @@ def make_projects_side_bar(project_list):
 
 def make_main(title,subtitle,content,img_src):
 	d = div(id = 'main_container')(div(id = 'main')(
-		img(src = img_src),
+			image(img_src),
 			h1(a(title)),
 			h3(subtitle),
-			p(content)
+			div(content)
 		))
 	return(d)
 
+def image(img_src):
+	if img_src != '':
+		return(img(src = img_src))
 def make_header(name):
 	h = header(id = 'header')(
 		h2(name+"'s github projects")
 		)
 	return(h)
-
-# project_list = [
-# "Abstract Art Project","AutoGenerateProjectPages","cipherTyper","cloudSimulator","github","graphingCalculator","jacksonhenry3.github.io","kinematics_Solver","newMediaPlayground","PythonRSAtesting","quantumTicTacToe","Recipe_book","sierpinskiTriangle","to_print","ulamSpiral","UtTotum","vector_field","TEST","UtTotemCS"]
-# projects_sidebar = make_projects_side_bar(project_list)
-
-# head = make_head('Test Page')
-
-# main = make_main()
-# h    = make_header('Jackson Henry')
-# generate_page()
