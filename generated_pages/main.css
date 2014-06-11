@@ -1,0 +1,125 @@
+@import 'http://fonts.googleapis.com/css?family=Raleway:200,800';
+@import 'http://fonts.googleapis.com/css?family=Roboto+Slab:700,300';
+
+html,body{
+  margin:0px;
+  padding:0px;
+}
+
+body
+{
+  font-size: 115%;
+  font-family: "Roboto Slab" sans-serif;
+  line-height: 150%;
+  background-color: rgb(245,245,245)
+}
+
+h1,h2,h3
+{
+  text-align: center;
+  font-family: 'Raleway', serif;
+  font-weight: 300;
+}
+#main img
+{
+  border-radius: 200px;
+  margin:0px auto;
+  display: block;
+  width:400px;
+}
+#sidebar
+{
+  width:30%;
+  float:right;
+}
+
+#sidebar ul
+{
+  list-style-type: none;
+}
+
+#sidebar ul li 
+{
+  margin-bottom:20px;
+}
+#main_container
+{
+  float:left;
+  width:70%;
+}
+
+#main 
+{
+  width:80%;
+  max-width:700px;
+  margin:0px auto;
+}
+
+#header
+{
+  width:100%;
+  height: 75px;
+  margin-bottom:25px;
+  background-color: rgba(255,255,255,.97);
+  position: fixed;
+  border-bottom:1px solid rgba(0,0,0,.3);
+  z-index: 10;
+}
+
+#all
+{
+  padding-top:100px;
+}
+
+a
+{
+  color:#42c096;
+  cursor: pointer;
+  position: relative;
+  text-decoration:none;
+  transition:all .5s;
+  display: inline-block;
+  font-weight:bold;
+  padding:2px;
+  z-index:5;
+
+}
+
+a:after
+{
+  position: absolute;
+  content:'';
+  transition:all .3s;
+  border-radius: 100px;
+  background-color: #42c096;
+  overflow:hidden;
+  left:50%;
+  top:50%;
+  width:0;
+  height:0;
+  z-index:-1;
+}
+h1 a:hover:after
+{
+  top:-20%;
+  left:-10%;
+  width:120%;
+  height:140%;
+}
+
+a:hover:after
+{
+  top:0%;
+  left:-10%;
+  width:120%;
+  height:100%;
+}
+a:hover
+{
+  overflow:visible;
+}
+
+a:hover
+{
+  color:white;
+}
