@@ -1,11 +1,11 @@
 from github import Github
 from html_template import *
 from base64 import b64decode
-g = Github("jacksonhenry3", "7ffa7ace35")
+g = Github("jacksonhenry3", "**********")
 
 repos = g.get_user().get_repos()
 repoList = []
-repo = repos[0]
+repo = repos[7]
 for r in repos:
 	repoList.append(r.name.replace('_',' '))
 
@@ -17,7 +17,7 @@ def get_file_contents(repo,path):
 	contents          = b64decode(b64_file_contents)
 	return(contents)
 
-
+main_img_url =  repo.get_file_contents('main_img.png').html_url.replace('https://github.com/','https://raw.githubusercontent.com/').replace('/blob','')
 def make_project_page(repo):
 	name = repo.name
 	title = name.replace('_',' ')
@@ -31,7 +31,7 @@ def make_project_page(repo):
 
 	head = make_head('Page')
 
-	main = make_main(title,desc,readme)
+	main = make_main(title,desc,readme,main_img_url)
 	h    = make_header(owner.name)
 	pg = generate_page(head,h,main,projects_sidebar)
 	pg = str(pg).replace('&lt;',"<").replace('&gt;','>')

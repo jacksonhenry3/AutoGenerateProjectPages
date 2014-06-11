@@ -38,9 +38,9 @@ def make_projects_side_bar(project_list):
 		)
 	return(sidebar)
 
-def make_main(title,subtitle,content):
+def make_main(title,subtitle,content,img_src):
 	d = div(id = 'main_container')(div(id = 'main')(
-		img(src = 'C:\Users\Jackson\Documents\GitHub\Abstract_Art_Project\main_img.png'),
+		img(src = img_src),
 			h1(a(title)),
 			h3(subtitle),
 			p(content)
@@ -49,14 +49,10 @@ def make_main(title,subtitle,content):
 
 def make_header(name):
 	h = header(id = 'header')(
-
-		ul(
-			li(name+" on github")
-			# li(),
-			# li()
-		)
+		h2(name+"'s github projects")
 		)
 	return(h)
+
 # project_list = [
 # "Abstract Art Project","AutoGenerateProjectPages","cipherTyper","cloudSimulator","github","graphingCalculator","jacksonhenry3.github.io","kinematics_Solver","newMediaPlayground","PythonRSAtesting","quantumTicTacToe","Recipe_book","sierpinskiTriangle","to_print","ulamSpiral","UtTotum","vector_field","TEST","UtTotemCS"]
 # projects_sidebar = make_projects_side_bar(project_list)
