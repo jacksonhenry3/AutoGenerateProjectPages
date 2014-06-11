@@ -19,50 +19,53 @@
     <div id="all">
       <div id="main_container">
         <div id="main">
-          <img src="https://raw.githubusercontent.com/jacksonhenry3/Kinematics_Solver/master/main_img.png"/>
+          <img src="https://raw.githubusercontent.com/jacksonhenry3/Project_Pages/master/IMG_9084.jpg"/>
           <h1>
             <a>
-              Kinematics Solver
+              Project Pages
             </a>
           </h1>
           <h3>
-            solves kinematics problems (completed)
+            Automatically generating consistent webpages for github repos
           </h3>
           <div>
+            <h2>About</h2>
             <p>
-            	Kinematics area a simple section of Neutonian mechanics covered in high school. It essential involves figuring out which of 4 equations to apply in which order based on what information you need and what information you have about the motion of an object. The four equations are 
+            	This project is designed to generate webpages best on all the githhub repositories of a user. This allows for Easy updating and universal stlyes for all pages as well as less work for maintence for each individual project. 
             </p>
-            <table style="width:80%; margin:20px auto;text-align:center;">
-            	<tr>
-            		<td>
-            			d = v<sub>i</sub> t + <sup>1</sup>/<sub>2</sub> a t<sup>2</sup>
-            		</td>
-            		<td>
-            			v<sub>f</sub><sup>2</sup> = v<sub>i</sub><sup>2</sup> + 2 a d
-            		</td>
-            	</tr>
-            	<tr>
-            		<td>
-            			v<sub>f</sub> = v<sub>i</sub> + a t
-            		</td>
-            		<td>
-            			d = (v<sub>f</sub> + v<sub>i</sub>) <sup>1</sup>/<sub>2</sub> t
-            		</td>
-            	</tr>
-            </table>
             <p>
-            	where d is distance, t is time, v<sub>i</sub> is the initial velocity, v<sub>f</sub> is the final velocity and a is the acceleration. This program brute forces the problems. I manually solved every equation for every variable and input the symbolic solution. After that when the user inputs the known variables it essential check what equations are applicable to solve for the desired variable and then calculates it using the general solution i found.
+            	First using pyHTML i generated a simple html tamplate. Then using pygithub i pull down the title of each project and the readme (to be used as the description). I then put these in to the html template. After some styling you get a simple accesable page for each of your github repositories.
             </p>
-            you can read more about kinematics <a href = 'http://www.physicsclassroom.com/class/1DKin/Lesson-6/Kinematic-Equations'>here</a>
-            <hr>
-            written in <a href = 'https://www.python.org/'>Python</a> 2.7.3<br>
+            <h2>how to use</h2>
+            <ol>
+            	<li>
+            		Install git
+            	</li>
+            	<li>
+            		download/clone and instal Py-github
+            	</li>
+            	<li>
+            		download/clone this repo
+            	</li>
+            	<li>
+            		run generatePages.py
+            	</li>
+            	<li>
+            		html files can be found in the generated_pages directory
+            	</li>
+            </ol>
             
-            Dependencies:
-            	<ul>
-            		<li>
-            			<a href = 'http://www.wxpython.org/'>wxPython</a>
-            		</li>
-            	</ul>
+            <h2>Usefull information/conventions used</h2>
+            <ul>
+            	<li>
+            		if you include an image in the root of a repo it will be the main project image. Or if you have an image title "main_img.png"
+            	</li>
+            	<li>
+            		put repo names in Word1_Word2_Word3 ... format for best results.
+            	</li>
+            
+            </ul>
+            
 
           </div>
         </div>
