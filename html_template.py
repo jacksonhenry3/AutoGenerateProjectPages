@@ -20,7 +20,7 @@ def generate_page(head,h,main,projects_sidebar):
 #this generates the elements inside the head element
 def make_head(pg_title,favico_url = '',stylesheet = 'main.css'):
 	h = head(
-		title(pg_title),
+		title(pg_title+' Project Page'),
 		meta(charset='UTF-8'),
 		meta(name="viewport", content="width=device-width, height=device-height"),
 		meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport'),
@@ -39,6 +39,7 @@ def make_projects_side_bar(project_list):
 		projects
 	)
 	sidebar = div(id = 'sidebar')(
+		h2('Other Projects'),
 		project_ul
 		)
 	return(sidebar)
@@ -55,8 +56,10 @@ def make_main(title,subtitle,content,img_src):
 def image(img_src):
 	if img_src != '':
 		return(img(src = img_src))
-def make_header(name):
+def make_header(name,zip_link,tar_link,github_link):
 	h = header(id = 'header')(
-		h2(name+"'s github projects")
+		a(href = zip_link)('.zip'),
+		a(href = tar_link)('.tar.gz'),
+		a(href = github_link)('github')
 		)
 	return(h)
